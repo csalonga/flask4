@@ -1,0 +1,20 @@
+<html>
+  <header>
+  </header>
+  <body>
+    {% include "header.html" %}
+            <h1>Order History</h1>
+            {% if session["user"] is defined %}
+                {% if order_list %}
+                {{ order_list }}
+                {% else %}
+                <p>No orders have been made yet.</p>
+                {% endif %}
+            {% else %}
+            <a href='/login'>Login</a>
+            {% endif %}
+    {% include "footer.html" %}
+
+
+  </body>
+</html>
